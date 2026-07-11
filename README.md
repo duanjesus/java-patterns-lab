@@ -15,7 +15,7 @@
 
 ## 📖 About the project
 
-Every pattern in this repo is implemented against the **same running example** — a small e-commerce checkout domain (orders, payments, invoices, support tickets, reports) — so the catalog reads as one coherent story instead of nine disconnected toy snippets. Each pattern has:
+Every pattern in this repo is implemented against the **same running example** — a small e-commerce checkout domain (orders, payments, invoices, support tickets, reports, shipping, catalog browsing) — so the catalog reads as one coherent story instead of a pile of disconnected toy snippets. Each pattern has:
 
 - a **doc page** under [`docs/patterns/`](docs/patterns) with the problem it solves, the solution, and a Mermaid UML class diagram (renders directly on GitHub);
 - **runnable source** under `src/main/java/com/javapatternslab/<pattern>/`, including a `*Demo` class with a `main()` you can run directly;
@@ -36,6 +36,13 @@ This is a learning/reference project — a place to point to a concrete, working
 | 7 | Chain of Responsibility | Behavioral | Route a support ticket through L1 → L2 → Manager until someone can handle its severity | [docs](docs/patterns/chain-of-responsibility.md) | [`chainofresponsibility/`](src/main/java/com/javapatternslab/chainofresponsibility) |
 | 8 | Template Method | Behavioral | Share the fetch → format → export skeleton across PDF and CSV report generators | [docs](docs/patterns/template-method.md) | [`templatemethod/`](src/main/java/com/javapatternslab/templatemethod) |
 | 9 | Command | Behavioral | Turn "place order" / "cancel order" into objects so they can be queued, logged and undone | [docs](docs/patterns/command.md) | [`command/`](src/main/java/com/javapatternslab/command) |
+| 10 | Singleton | Creational | Guarantee exactly one shared, lazily-created `CheckoutConfig` across the whole app | [docs](docs/patterns/singleton.md) | [`singleton/`](src/main/java/com/javapatternslab/singleton) |
+| 11 | Abstract Factory | Creational | Produce a matched label + customs-form pair per shipping mode, so the two can never mismatch | [docs](docs/patterns/abstract-factory.md) | [`abstractfactory/`](src/main/java/com/javapatternslab/abstractfactory) |
+| 12 | Facade | Structural | Hide inventory + payment + shipping + notification coordination behind one `placeOrder()` call | [docs](docs/patterns/facade.md) | [`facade/`](src/main/java/com/javapatternslab/facade) |
+| 13 | Proxy | Structural | Cache an expensive product lookup transparently, behind the same `ProductCatalog` interface | [docs](docs/patterns/proxy.md) | [`proxy/`](src/main/java/com/javapatternslab/proxy) |
+| 14 | Composite | Structural | Price a cart item and an arbitrarily nested bundle of items through the same interface | [docs](docs/patterns/composite.md) | [`composite/`](src/main/java/com/javapatternslab/composite) |
+| 15 | State | Behavioral | Make invalid order transitions (e.g. shipping a `CREATED` order) impossible without `if` chains | [docs](docs/patterns/state.md) | [`state/`](src/main/java/com/javapatternslab/state) |
+| 16 | Iterator | Behavioral | Traverse order history two different ways (all orders, paid-only) without exposing its internal list | [docs](docs/patterns/iterator.md) | [`iterator/`](src/main/java/com/javapatternslab/iterator) |
 
 ## 🚀 Running it
 
@@ -68,7 +75,14 @@ java-patterns-lab/
 │   ├── decorator/
 │   ├── chainofresponsibility/
 │   ├── templatemethod/
-│   └── command/
+│   ├── command/
+│   ├── singleton/
+│   ├── abstractfactory/
+│   ├── facade/
+│   ├── proxy/
+│   ├── composite/
+│   ├── state/
+│   └── iterator/
 └── src/test/java/com/javapatternslab/   (mirrors src/main, one test class per pattern)
 ```
 

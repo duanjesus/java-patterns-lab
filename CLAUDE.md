@@ -6,7 +6,7 @@ Guidance for Claude Code (or any AI coding agent) working in this repository.
 
 A single-module Maven project (Java 21, no Spring, no framework) that catalogs classic Gang-of-Four design patterns. It is not an application — there is no `main` entry point for the repo as a whole. Instead every pattern is a self-contained, runnable example under its own package, each with a `*Demo` class (a plain `main()`) and a JUnit 5 test.
 
-All nine patterns are implemented against **one shared fictional domain** — an e-commerce checkout (orders, payments, invoices, support tickets, reports) — on purpose, so the catalog reads as one coherent story instead of nine unrelated toy snippets. When adding a new pattern, prefer extending this same domain (e.g. another `Order`/`Payment`/`Notification`-flavored example) over introducing an unrelated one (animals, shapes, etc.), unless the pattern genuinely doesn't fit the domain.
+All patterns are implemented against **one shared fictional domain** — an e-commerce checkout (orders, payments, invoices, support tickets, reports, shipping, catalog browsing) — on purpose, so the catalog reads as one coherent story instead of a pile of unrelated toy snippets. When adding a new pattern, prefer extending this same domain (e.g. another `Order`/`Payment`/`Notification`-flavored example) over introducing an unrelated one (animals, shapes, etc.), unless the pattern genuinely doesn't fit the domain. Each pattern's package is still self-contained (its own `Order`/`Product`/etc. types if it needs them) — patterns don't import each other's classes, even when the concept overlaps (e.g. `state`'s `OrderContext` and `iterator`'s `OrderHistory` both model orders but don't share a type).
 
 ```
 java-patterns-lab/
