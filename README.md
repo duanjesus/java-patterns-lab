@@ -43,6 +43,15 @@ This is a learning/reference project — a place to point to a concrete, working
 | 14 | Composite | Structural | Price a cart item and an arbitrarily nested bundle of items through the same interface | [docs](docs/patterns/composite.md) | [`composite/`](src/main/java/com/javapatternslab/composite) |
 | 15 | State | Behavioral | Make invalid order transitions (e.g. shipping a `CREATED` order) impossible without `if` chains | [docs](docs/patterns/state.md) | [`state/`](src/main/java/com/javapatternslab/state) |
 | 16 | Iterator | Behavioral | Traverse order history two different ways (all orders, paid-only) without exposing its internal list | [docs](docs/patterns/iterator.md) | [`iterator/`](src/main/java/com/javapatternslab/iterator) |
+| 17 | Prototype | Creational | Create each recurring order by copying a registered template, without the copy ever changing the template | [docs](docs/patterns/prototype.md) | [`prototype/`](src/main/java/com/javapatternslab/prototype) |
+| 18 | Bridge | Structural | Combine any report type (sales, inventory) with any output format (text, HTML) without a class per pair | [docs](docs/patterns/bridge.md) | [`bridge/`](src/main/java/com/javapatternslab/bridge) |
+| 19 | Flyweight | Structural | Let thousands of order lines share one immutable object per product instead of each holding a copy | [docs](docs/patterns/flyweight.md) | [`flyweight/`](src/main/java/com/javapatternslab/flyweight) |
+| 20 | Visitor | Behavioral | Add tax and shipping calculations over a cart tree without adding a method to every item class | [docs](docs/patterns/visitor.md) | [`visitor/`](src/main/java/com/javapatternslab/visitor) |
+| 21 | Mediator | Behavioral | Keep cart, coupon, shipping and the place-order button in sync without them referencing each other | [docs](docs/patterns/mediator.md) | [`mediator/`](src/main/java/com/javapatternslab/mediator) |
+| 22 | Memento | Behavioral | Checkpoint an order draft and undo back to it without exposing the draft's internal state | [docs](docs/patterns/memento.md) | [`memento/`](src/main/java/com/javapatternslab/memento) |
+| 23 | Interpreter | Behavioral | Keep promotion rules as text (`total >= 300 AND items >= 2`) and evaluate them against any order | [docs](docs/patterns/interpreter.md) | [`interpreter/`](src/main/java/com/javapatternslab/interpreter) |
+
+That is all 23 patterns from the original Gang-of-Four book: 5 creational, 7 structural and 11 behavioral.
 
 ## 🚀 Running it
 
@@ -82,7 +91,14 @@ java-patterns-lab/
 │   ├── proxy/
 │   ├── composite/
 │   ├── state/
-│   └── iterator/
+│   ├── iterator/
+│   ├── prototype/
+│   ├── bridge/
+│   ├── flyweight/
+│   ├── visitor/
+│   ├── mediator/
+│   ├── memento/
+│   └── interpreter/
 └── src/test/java/com/javapatternslab/   (mirrors src/main, one test class per pattern)
 ```
 
@@ -94,7 +110,7 @@ This is the first of a small portfolio of independent projects, each built to de
 - [Social Supply Management](https://github.com/duanjesus/social-supply-management-api) — layered CRUD architecture.
 - [CashPilot](https://github.com/duanjesus/cashpilot) — business rules and financial calculations.
 - [PulseHub](https://github.com/duanjesus/pulsehub) — real-time communication (WebSocket/STOMP).
-- **EventFlow** (planned) — event-driven architecture (RabbitMQ), wiring the other projects together via domain events.
+- [PulseQueue](https://github.com/duanjesus/pulsequeue) — event-driven notification infrastructure (RabbitMQ): retry + dead-letter queue, Redis deduplication and rate limiting, observability.
 
 ## License
 
